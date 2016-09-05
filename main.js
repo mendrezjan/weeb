@@ -1,6 +1,5 @@
 var nyaa = require('./nyaa');
 var inquirer = require('inquirer');
-var Q = require('q');
 var chalk = require('chalk');
 var os = require('os');
 var fs = require('fs');
@@ -42,7 +41,6 @@ function onReject(err) {
 
 function selectTorrent(data) {
   var choices = [];
-  var deferred = Q.defer();
   for (var idx in data) {
     var torrent = data[idx];
     var title = torrent.title;
